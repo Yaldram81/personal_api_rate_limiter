@@ -1,0 +1,23 @@
+
+import React from 'react';
+
+interface StatCardProps {
+  label: string;
+  value: string | number;
+  icon: React.ReactNode;
+  colorClass: string;
+}
+
+const StatCard: React.FC<StatCardProps> = ({ label, value, icon, colorClass }) => (
+  <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex items-center gap-4">
+    <div className={`p-3 rounded-lg ${colorClass} text-white`}>
+      {icon}
+    </div>
+    <div>
+      <p className="text-sm font-medium text-slate-500">{label}</p>
+      <p className="text-2xl font-bold text-slate-900">{value}</p>
+    </div>
+  </div>
+);
+
+export default StatCard;
